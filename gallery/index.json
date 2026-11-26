@@ -1,0 +1,56 @@
+{
+  "format": 1,
+  "mods": [
+    {
+      "id": "midnight",
+      "kind": "theme",
+      "name": "Midnight",
+      "author": "Adrix-fr",
+      "version": "1.0.0",
+      "description": "Deep blue backgrounds with a violet accent.",
+      "description_fr": "Des fonds bleu nuit et une touche de violet.",
+      "path": "examples/themes/midnight",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "c7e916c075c68bc636e87436be459fcf5541353390e1d1bb5039bf51d625e7dd"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "db65df638c9f215d3a69154b53a08d71cd451ac738931c704a0f778b0a811157"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "d7dc731172b64b3a599092bf4fc00d612caf433b18bb7056477c682f35bcf925"
+        }
+      ],
+      "preview": {
+        "frame": "#07070f",
+        "background": "#0f1020",
+        "highlight": "#1c1e36",
+        "text": "#a9abc9",
+        "accent": "#a78bfa"
+      }
+    },
+    {
+      "id": "hello-badge",
+      "kind": "extension",
+      "name": "Hello badge",
+      "author": "Adrix-fr",
+      "version": "1.0.0",
+      "description": "Shows a small badge above the player bar, to check that extensions work.",
+      "description_fr": "Un petit badge au-dessus de la barre de lecture, pour vérifier que les extensions marchent.",
+      "path": "examples/extensions/hello-badge",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "781712d1c61b0c201788c050cef4a7953d7ba881a70d23faecc570cced2b2796"
+        },
+        {
+          "path": "main.js",
+          "sha256": "0c3c1b50c26d40e88ef9d24e9b988a848d25bc59d98dd910309e0ed49cc05535"
+        }
+      ]
+    }
+  ]
+}
