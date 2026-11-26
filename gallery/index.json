@@ -5,7 +5,7 @@
       "id": "midnight",
       "kind": "theme",
       "name": "Midnight",
-      "author": "Adrix-fr",
+      "author": "spacetify",
       "version": "1.0.0",
       "description": "Deep blue backgrounds with a violet accent.",
       "description_fr": "Des fonds bleu nuit et une touche de violet.",
@@ -21,7 +21,7 @@
         },
         {
           "path": "theme.toml",
-          "sha256": "d7dc731172b64b3a599092bf4fc00d612caf433b18bb7056477c682f35bcf925"
+          "sha256": "e2e47d34986c48c93c777590f57d57e28b26d0d6305df3a82434b2290545f823"
         }
       ],
       "preview": {
@@ -36,7 +36,7 @@
       "id": "hello-badge",
       "kind": "extension",
       "name": "Hello badge",
-      "author": "Adrix-fr",
+      "author": "spacetify",
       "version": "1.0.0",
       "description": "Shows a small badge above the player bar, to check that extensions work.",
       "description_fr": "Un petit badge au-dessus de la barre de lecture, pour vérifier que les extensions marchent.",
@@ -44,7 +44,7 @@
       "files": [
         {
           "path": "extension.toml",
-          "sha256": "781712d1c61b0c201788c050cef4a7953d7ba881a70d23faecc570cced2b2796"
+          "sha256": "59e5501f47f6078c75092e59113ac2844c493cd0c32ac105bfc3523fb6f6a5ea"
         },
         {
           "path": "main.js",
