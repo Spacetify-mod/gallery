@@ -1,0 +1,8 @@
+# Rosé Pine, a spacetify theme. See docs/themes.md for every field.
+
+id = "rose-pine"
+name = "Rosé Pine"
+version = "1.0.0"
+author = "spacetify"
+description = "Muted night purples with a soft rose accent. Palette: Rosé Pine."
+spacetify = ">=0.4.0"

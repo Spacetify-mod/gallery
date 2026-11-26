@@ -1,0 +1,24 @@
+# Bookmarks, a spacetify extension. See docs/extensions.md for every field.
+
+id = "bookmarks"
+name = "Bookmarks"
+version = "1.0.0"
+author = "spacetify"
+description = "Keep moments of songs and play them again from that exact second, in one click."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = [
+  '[data-testid="volume-bar"]',
+  '[data-testid="now-playing-widget-v2-byline"]',
+  '[data-testid="context-item-link"]',
+  '[data-testid="playback-progressbar"]',
+  '[data-testid="control-button-playpause"]',
+  '[data-testid="playback-position"]',
+  'main [role="row"]',
+]
+
+[settings.max]
+type = "number"
+default = 50
+label = "Bookmarks kept at most"

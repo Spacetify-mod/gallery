@@ -1,0 +1,8 @@
+# Nord, a spacetify theme. See docs/themes.md for every field.
+
+id = "nord"
+name = "Nord"
+version = "1.0.0"
+author = "spacetify"
+description = "Cool arctic blue-greys with a frost blue accent. Palette: Nord."
+spacetify = ">=0.4.0"

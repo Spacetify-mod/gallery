@@ -1,0 +1,8 @@
+# Tokyo Night, a spacetify theme. See docs/themes.md for every field.
+
+id = "tokyo-night"
+name = "Tokyo Night"
+version = "1.0.0"
+author = "spacetify"
+description = "Deep night blues lit by city lights, with a bright blue accent. Palette: Tokyo Night."
+spacetify = ">=0.4.0"

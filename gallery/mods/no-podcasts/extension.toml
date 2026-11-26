@@ -1,0 +1,30 @@
+# No Podcasts, a spacetify extension. See docs/extensions.md for every field.
+
+id = "no-podcasts"
+name = "No Podcasts"
+version = "1.0.0"
+author = "spacetify"
+description = "Keeps podcasts and audiobooks off your home page: only music is left."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = [
+  '[data-encore-id="card"]',
+  '[data-testid="home-page"]',
+  '[data-testid="home-page"] section',
+]
+
+[settings.podcasts]
+type = "boolean"
+default = true
+label = "Hide podcasts and episodes"
+
+[settings.audiobooks]
+type = "boolean"
+default = true
+label = "Hide audiobooks"
+
+[settings.everywhere]
+type = "boolean"
+default = false
+label = "Hide them everywhere, not only on the home page"

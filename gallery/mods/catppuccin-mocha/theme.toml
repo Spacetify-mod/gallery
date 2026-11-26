@@ -1,0 +1,8 @@
+# Catppuccin Mocha, a spacetify theme. See docs/themes.md for every field.
+
+id = "catppuccin-mocha"
+name = "Catppuccin Mocha"
+version = "1.0.0"
+author = "spacetify"
+description = "Soft pastel colours on a warm dark base, with a mauve accent. Palette: Catppuccin (Mocha)."
+spacetify = ">=0.4.0"

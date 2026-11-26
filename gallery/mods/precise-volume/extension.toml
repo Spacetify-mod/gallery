@@ -1,0 +1,21 @@
+# Precise Volume, a spacetify extension. See docs/extensions.md for every field.
+
+id = "precise-volume"
+name = "Precise Volume"
+version = "1.0.0"
+author = "spacetify"
+description = "Shows the volume in %, changes it with the mouse wheel, and sets it exactly with a click."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = ['[data-testid="volume-bar"]']
+
+[settings.step]
+type = "number"
+default = 5
+label = "Mouse wheel step, in %"
+
+[settings.wheel]
+type = "boolean"
+default = true
+label = "Change the volume with the mouse wheel"

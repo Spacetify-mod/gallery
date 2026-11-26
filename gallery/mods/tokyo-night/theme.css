@@ -1,0 +1,38 @@
+/*
+ * Tokyo Night: small touches on top of colors.toml.
+ *
+ * Only stable hooks: Spotify's colour variables and `data-testid`
+ * attributes, never generated class names. `spacetify doctor` checks them.
+ */
+
+/*
+ * The frame around the panels. Spotify paints it black directly, without
+ * its colour variables, so colors.toml cannot reach it. These selectors
+ * colour, in order: the space between the panels, the top bar and the
+ * player bar. Each one matches a single element (checked in Spotify
+ * 1.3.10), found from hooks that `spacetify doctor` can verify.
+ */
+:root {
+  --spacetify-frame: #0c0e14;
+}
+div:has(> div > [data-testid="now-playing-bar"]),
+.Root > div > div:has([data-testid="top-bar-forward-button"]),
+div:has(> [data-testid="now-playing-bar"]) {
+  background-color: var(--spacetify-frame) !important;
+}
+
+/* Selected text takes the accent colour. */
+::selection {
+  background-color: color-mix(in srgb, var(--essential-bright-accent) 35%, transparent);
+  color: var(--text-base);
+}
+
+/* The keyboard focus ring matches the accent. */
+:focus-visible {
+  outline-color: var(--essential-bright-accent);
+}
+
+/* A thin accent line above the player bar. */
+[data-testid="now-playing-bar"] {
+  border-top: 1px solid color-mix(in srgb, var(--essential-bright-accent) 35%, transparent);
+}

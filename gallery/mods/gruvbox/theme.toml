@@ -1,0 +1,8 @@
+# Gruvbox, a spacetify theme. See docs/themes.md for every field.
+
+id = "gruvbox"
+name = "Gruvbox"
+version = "1.0.0"
+author = "spacetify"
+description = "Retro warm browns with an orange accent, easy on the eyes. Palette: Gruvbox (dark)."
+spacetify = ">=0.4.0"

@@ -1,0 +1,8 @@
+# Everforest, a spacetify theme. See docs/themes.md for every field.
+
+id = "everforest"
+name = "Everforest"
+version = "1.0.0"
+author = "spacetify"
+description = "Calm forest greens and soft cream text. Palette: Everforest (dark)."
+spacetify = ">=0.4.0"

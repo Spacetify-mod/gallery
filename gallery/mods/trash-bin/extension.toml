@@ -1,0 +1,27 @@
+# Trash Bin, a spacetify extension. See docs/extensions.md for every field.
+
+id = "trash-bin"
+name = "Trash Bin"
+version = "1.0.0"
+author = "spacetify"
+description = "Throw away songs or artists you never want to hear again: they are skipped by themselves."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = [
+  '[data-testid="volume-bar"]',
+  '[data-testid="now-playing-widget-v2"]',
+  '[data-testid="now-playing-widget-v2-byline"]',
+  '[data-testid="context-item-link"]',
+  '[data-testid="control-button-skip-forward"]',
+]
+
+[settings.skip]
+type = "boolean"
+default = true
+label = "Skip what is in the trash"
+
+[settings.notify]
+type = "boolean"
+default = true
+label = "Say when a song is skipped"

@@ -1,0 +1,8 @@
+# Kanagawa, a spacetify theme. See docs/themes.md for every field.
+
+id = "kanagawa"
+name = "Kanagawa"
+version = "1.0.0"
+author = "spacetify"
+description = "Ink blues and old paper tones, inspired by Hokusai's Great Wave. Palette: Kanagawa (Wave)."
+spacetify = ">=0.4.0"

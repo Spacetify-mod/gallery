@@ -1,0 +1,8 @@
+# Dracula, a spacetify theme. See docs/themes.md for every field.
+
+id = "dracula"
+name = "Dracula"
+version = "1.0.0"
+author = "spacetify"
+description = "The famous dark purple theme, with vivid neon colours. Palette: Dracula."
+spacetify = ">=0.4.0"

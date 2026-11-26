@@ -51,6 +51,695 @@
           "sha256": "0c3c1b50c26d40e88ef9d24e9b988a848d25bc59d98dd910309e0ed49cc05535"
         }
       ]
+    },
+    {
+      "id": "catppuccin-mocha",
+      "kind": "theme",
+      "name": "Catppuccin Mocha",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Soft pastel colours on a warm dark base, with a mauve accent. Palette: Catppuccin (Mocha).",
+      "description_fr": "Des couleurs pastel douces sur un fond sombre et chaleureux, avec une touche mauve. Palette : Catppuccin (Mocha).",
+      "path": "gallery/mods/catppuccin-mocha",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "2bad247e3dcac4bfe6691780f4c2d9170884145c1fe588911c2abb5914ed9737"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "4e229772d56b7bdaeeb76ec1385006d5a920ef2a6360e6ad71898c83cee60b8e"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "cf63c401a7b708e7a7b2cad6e828de65b4b0ca513aa1ce7ec5b3b0cd32df7de6"
+        }
+      ],
+      "preview": {
+        "frame": "#11111b",
+        "background": "#1e1e2e",
+        "highlight": "#313244",
+        "text": "#cdd6f4",
+        "accent": "#cba6f7"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "5c6d1f0faa3b8bd683c944510c8f7108df399e1847bd2b4dd764b6213b605da4"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "73f2f2ece81a5c4494f1cda2d32ba3fb41e7d9fb57d522fc215c342701f93194"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "aead1858dc5a885037a6d694aa5ac989f8fa17e750e6701415119cb217178899"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "7c484ab88f147d36dfd87c527941b7670edc5579de1c6905affc7eb01086f7e1"
+        },
+        "tags": [
+          "dark",
+          "pastel",
+          "purple",
+          "cozy"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "nord",
+      "kind": "theme",
+      "name": "Nord",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Cool arctic blue-greys with a frost blue accent. Palette: Nord.",
+      "description_fr": "Des gris-bleus arctiques et frais, avec un bleu givré. Palette : Nord.",
+      "path": "gallery/mods/nord",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "6d978ceea239e7439a36092640196dff593d11dac8e88108aedea14c59d614ef"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "398873f9adafae71e6972ee65ce2c6dd3155b921da0a400aa79eab3c2bf040db"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "fea50ae6a6df2658410e549a83642b2d17091fd8e29b6b7523245749516bde62"
+        }
+      ],
+      "preview": {
+        "frame": "#242933",
+        "background": "#2e3440",
+        "highlight": "#3b4252",
+        "text": "#eceff4",
+        "accent": "#88c0d0"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "bb41d342e313355c3f4569c2443dce98401200b535de90708ce87bc0bfe098d1"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "21ab058fecbdc2f823c4de434fc8ec6182fb0872698efca3194471c8516dba60"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "ada65129f33486c1a63b55222766981214090260412299c6998705ecf8580301"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "26b72e0703aaba0c0fc61d616c466c0f4e666ea8894b1f3fc3eaba8ccf52b80f"
+        },
+        "tags": [
+          "dark",
+          "blue",
+          "cool",
+          "minimal"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "dracula",
+      "kind": "theme",
+      "name": "Dracula",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "The famous dark purple theme, with vivid neon colours. Palette: Dracula.",
+      "description_fr": "Le célèbre thème sombre violet, avec des couleurs néon vives. Palette : Dracula.",
+      "path": "gallery/mods/dracula",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "7f925e0fb38d12721f5e4f30e001e2504b7a9a2d9bc59075b7d9c6b7fe048b7f"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "fa829053302e2aaf588e4da754c45ffb9fd88ae62fd80f534805247b8728d767"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "aa0aa76d6b94e6edbc9fe45e4ddabbff44092aba2117f6e44b4cfaa89d6941ca"
+        }
+      ],
+      "preview": {
+        "frame": "#191a21",
+        "background": "#282a36",
+        "highlight": "#343746",
+        "text": "#f8f8f2",
+        "accent": "#bd93f9"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "8fc8ab6600f9c555012a63cbb3faa3963ad1311ae5aef13e27513df38b6cf09c"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "976447431f4b2a5e17ebdffabe28132b6ebadea50236ffb6a93e603335c891ef"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "e08ea7623b16d3e8552b3f25d3d8b651932f8c58765078e29179e08b9e830f15"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "0392f3b9d603d672c4c700dfe32ca12215d8bf9e814279ca7954ea6bb433f906"
+        },
+        "tags": [
+          "dark",
+          "purple",
+          "neon"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "gruvbox",
+      "kind": "theme",
+      "name": "Gruvbox",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Retro warm browns with an orange accent, easy on the eyes. Palette: Gruvbox (dark).",
+      "description_fr": "Des bruns chauds façon rétro, avec une touche orange, doux pour les yeux. Palette : Gruvbox (sombre).",
+      "path": "gallery/mods/gruvbox",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "c4a503796cc0d900d387c3a93567b5bf00ac481bd94edb64c76b356ac76c3f33"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "4836ad433b7982da21d2bb1691a4083e57f481430c61f1468f8ffb52d908bd6e"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "8f65b1da742139ef7b0994a312121a85b88c9bdf95e93cca9981d4d2570c4cf9"
+        }
+      ],
+      "preview": {
+        "frame": "#1d2021",
+        "background": "#282828",
+        "highlight": "#3c3836",
+        "text": "#ebdbb2",
+        "accent": "#fe8019"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "8a1abab74ec508c66fd84b95cc7b0c8f7a92cfc6abb87967ae755e8b73852998"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "b2eac593cd61e93dcc56e6ae6fba956dd1213efaacdfb74a148212650eb59852"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "8cc66c388d747cd84c0a6bdee1628b11d61cd64da0afbfa84c61b2f6c192c616"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "69186e6ded54c4781d50025e90b4d38ccbbaeb15f964618622e7894f7f27c904"
+        },
+        "tags": [
+          "dark",
+          "warm",
+          "retro",
+          "orange"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "rose-pine",
+      "kind": "theme",
+      "name": "Rosé Pine",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Muted night purples with a soft rose accent. Palette: Rosé Pine.",
+      "description_fr": "Des violets de nuit tamisés, avec une touche rose poudré. Palette : Rosé Pine.",
+      "path": "gallery/mods/rose-pine",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "9fdad2f7e3477c8b0b520d755e6d889e64258f5509403898f5b0cd6bcd9df103"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "8b6fc7d0933a008d191abc59a6b6325ee1e7eee2bcc0c0ae788be1436bd00b63"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "11df6607453ab3e617992cd6881910b6c7884727a835bcf74cd5f83a2e66ff63"
+        }
+      ],
+      "preview": {
+        "frame": "#110f19",
+        "background": "#191724",
+        "highlight": "#26233a",
+        "text": "#e0def4",
+        "accent": "#ebbcba"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "68431ed73bd24c7804e76fe9524fbc2198253447f8827a42fb892945c98f1041"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "55fdd2b89115b9ed02fc2ec943c4d7e298805121be5fabcb4a624c19305045ff"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "f240c70d1809d2f3d5191d6e52d0eb79d38a12d386e84e08d07e3c4b4bcb333f"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "4d0c738b6f41fe9f80d6864f21132fb0d2b0c30aa8eb3a5d31bfaee88ff8dacd"
+        },
+        "tags": [
+          "dark",
+          "purple",
+          "pink",
+          "soft"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "tokyo-night",
+      "kind": "theme",
+      "name": "Tokyo Night",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Deep night blues lit by city lights, with a bright blue accent. Palette: Tokyo Night.",
+      "description_fr": "Des bleus de nuit profonds éclairés par la ville, avec un bleu lumineux. Palette : Tokyo Night.",
+      "path": "gallery/mods/tokyo-night",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "91bd728a3533e4b5ccb9d9c44e780f215924a0a3d375943bb06352e3c921be02"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "51e53e613c7e53afda0d2a1830656e379bdc6eb1285f715febd34408e5edd52a"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "3431a5d30b05e01f2b55886816493435c8829d8202e7f4380cee4f4a99cd2bf1"
+        }
+      ],
+      "preview": {
+        "frame": "#0c0e14",
+        "background": "#1a1b26",
+        "highlight": "#292e42",
+        "text": "#c0caf5",
+        "accent": "#7aa2f7"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "fb82037f53483678e3ecb428b70e57c465cdd89f10c527645374ef15ccc5bbd2"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "67301bd6150b1379bcf8047108a0bc4baaa58b7e0027fea76b805293399db6e2"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "95794f343199f7144d265643371442e5557ff8c5286abfd84f4c668e51952c67"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "a523e1f744a330d0aeeb26a40e11678d2cb1df88f338b24fdf4dff4e7be499c5"
+        },
+        "tags": [
+          "dark",
+          "blue",
+          "night",
+          "neon"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "everforest",
+      "kind": "theme",
+      "name": "Everforest",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Calm forest greens and soft cream text. Palette: Everforest (dark).",
+      "description_fr": "Des verts de forêt apaisants et un texte crème doux. Palette : Everforest (sombre).",
+      "path": "gallery/mods/everforest",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "5b58d28299deabf47416cd2aa34e1408ac4bd806e196bd1c967f267342249b11"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "1815fb8e79f643e6b42990f0f9fc3352c990592f90f26fd94b2c6fb69033af32"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "22820b8ead2d877edac5ca361098acfeb6f9ab15e80df627f6c295a9c25b56cd"
+        }
+      ],
+      "preview": {
+        "frame": "#1e2326",
+        "background": "#2d353b",
+        "highlight": "#3d484d",
+        "text": "#d3c6aa",
+        "accent": "#a7c080"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "ff131cc529536f68b0960e1e3e4fae852d53d342b1bfd8ab45e0fd05379cfc8e"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "c495846a2584579689644f07e4bff99d1720e014a406dcb63ccd5eb107e19162"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "ce535ba5fb84fad8f55c51e44c24a943fe3de82159a7daeb16a1c9021ffda4e9"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "786acb9ebfaeec1880f1aa0affedfc64cf13ac8e0da4b2e9b4f91dff70e7605f"
+        },
+        "tags": [
+          "dark",
+          "green",
+          "nature",
+          "calm"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "kanagawa",
+      "kind": "theme",
+      "name": "Kanagawa",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Ink blues and old paper tones, inspired by Hokusai's Great Wave. Palette: Kanagawa (Wave).",
+      "description_fr": "Des bleus d'encre et des tons de vieux papier, inspirés de La Grande Vague d'Hokusai. Palette : Kanagawa (Wave).",
+      "path": "gallery/mods/kanagawa",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "2bcdd70a1965f38f0a1d486c779bcfed4fa75b89423f7744071e829f981d6395"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "5d64f45f0820b4af29ef15c4aba26a401331af6c3ba6763ae7251b8d21d2ce4c"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "a4b8de764d078c31fd4e21a7e2481967fb871d0c7f26b7db5327a8f506ead33d"
+        }
+      ],
+      "preview": {
+        "frame": "#16161d",
+        "background": "#1f1f28",
+        "highlight": "#2a2a37",
+        "text": "#dcd7ba",
+        "accent": "#7e9cd8"
+      },
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-home.png",
+            "sha256": "82a2191921bfc5abbb8d59e4ae88a1d0e5c7132e807b93136611d790ad3809bb"
+          },
+          {
+            "path": "showcase/2-playlist.png",
+            "sha256": "92407c29028f1ce1de13189228725de6ef1da012773cd40bb57220d9fe6294ab"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "9f50f048580b69419cef6861cc28e9ee03f14d2c8b3625c67e350c26f371e3a1"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "1faa3c3d1a10b0fa3407ab2f2881b6d958c39534c40caad2cba5919967c98e42"
+        },
+        "tags": [
+          "dark",
+          "blue",
+          "japanese",
+          "ink"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "fullscreen",
+      "kind": "extension",
+      "name": "Full Screen",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Shows the song playing full screen: big cover, blurred background, progress and controls.",
+      "description_fr": "Le titre en cours en plein écran : grande pochette, fond flouté, progression et commandes.",
+      "path": "gallery/mods/fullscreen",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "9c0b9b6290c1e06208f19938e989ab70bb970fe5d144c496424b794344b6efa1"
+        },
+        {
+          "path": "main.js",
+          "sha256": "2766a4bdd2fe57b7cf3060b0408b505564427107a8cc3f6ca6132f07d319e963"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-full-screen.png",
+            "sha256": "dab5184d0027f80492b22e7c39aa5fa06ee33e0216b32d92ea519db13ff9b11a"
+          },
+          {
+            "path": "showcase/2-button.png",
+            "sha256": "dbd8157be96eca50a27126046643a784c2dc301b08ff7ed649f896d9386b5e6c"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "27ac2e7b72c5693c12f7ab2c01777a38d55a52b41d9eed01521e31271ed88104"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "2182574e3ae1ec340d97fa072da04820f51bcedf3f634075913e9c42cf85d8ec"
+        },
+        "tags": [
+          "player",
+          "fullscreen",
+          "cover"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "trash-bin",
+      "kind": "extension",
+      "name": "Trash Bin",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Throw away songs or artists you never want to hear again: they are skipped by themselves.",
+      "description_fr": "Jette à la corbeille les titres ou les artistes que tu ne veux plus entendre : ils sont passés tout seuls.",
+      "path": "gallery/mods/trash-bin",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "498726d1d93bfabd066f84e71b24ff89d2713cddbc957f82892fb5c24469ea13"
+        },
+        {
+          "path": "main.js",
+          "sha256": "d280ea9e32a378f361e473aa58eb54e361226f79b02581e7ddb3e4f3c1ffd454"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-menu.png",
+            "sha256": "a4120f0b6fb2cc4756b5838dd3c4bb54f56e885cbf801886a974635f0ced56a8"
+          },
+          {
+            "path": "showcase/2-skipped.png",
+            "sha256": "d79b144a5198c4e10d00b3cbefee5e7966be635c2e151b598afa45c7b1a3332d"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "aba94733f700923a0b98d0e1328e39721b5eecd549a3a649b54e23fa11236002"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "ed7742372dd96c467503fdfe3b830cfe1615c1f8cc08248a021c7099aa39c738"
+        },
+        "tags": [
+          "skip",
+          "blocklist",
+          "player"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "precise-volume",
+      "kind": "extension",
+      "name": "Precise Volume",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Shows the volume in %, changes it with the mouse wheel, and sets it exactly with a click.",
+      "description_fr": "Le volume en %, réglable à la molette de la souris et au pourcentage près d'un clic.",
+      "path": "gallery/mods/precise-volume",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "13c51940bc9ee77abbe9da993b90a109e00861f230242342291eef4ab53dc50a"
+        },
+        {
+          "path": "main.js",
+          "sha256": "6466a056d328442c466652bdf4bdfeab25729e89c2a57c3c9be9a3233c91cf92"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-wheel.png",
+            "sha256": "7a10ed1dbeef52d8ca2538271097addc12647d692d3ce0c207a7c6d3f055deb5"
+          },
+          {
+            "path": "showcase/2-exact.png",
+            "sha256": "208da487081ca5d2bdce08d12477459d89ed3eee455a135f5fb67d3e3ba251a7"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "a0924d814d68222c372aa607b08053055cb4a411e8e56ff08cddfc7873aaab38"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "0cb87abf80626d0b29d30305fe1e704e488ee4e8bb5ebf02d7723b137d056a47"
+        },
+        "tags": [
+          "volume",
+          "player",
+          "mouse"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "no-podcasts",
+      "kind": "extension",
+      "name": "No Podcasts",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Keeps podcasts and audiobooks off your home page: only music is left.",
+      "description_fr": "Plus de podcasts ni de livres audio sur ton accueil : seulement de la musique.",
+      "path": "gallery/mods/no-podcasts",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "8da57fad9dad21d7f6bf440b934c6475345285a206e98cb34179e27187ca031f"
+        },
+        {
+          "path": "main.js",
+          "sha256": "48a45698c8fa034bd224bd5c52584f3e2a5e8d340233caec5808a36a385f9da8"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-hidden.png",
+            "sha256": "85c5db0d1d60254294dbc4784c945984ca471dc839a13f63ddbe638936027715"
+          },
+          {
+            "path": "showcase/2-music-only.png",
+            "sha256": "1a618e4a72e216c7eaeac256d4cc5d714514c02f207da4fa3e779edbeafbffc2"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "996527400d206515db71c5a3cf2546653a96928add74d8918c5dac1420026e21"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "3edd3f9942471158e5176c909644ad00819c28d80efad0d6427836427be6d32d"
+        },
+        "tags": [
+          "home",
+          "podcasts",
+          "clean"
+        ]
+      },
+      "updated": "2026-11-26"
+    },
+    {
+      "id": "bookmarks",
+      "kind": "extension",
+      "name": "Bookmarks",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Keep moments of songs and play them again from that exact second, in one click.",
+      "description_fr": "Garde des moments de tes titres et réécoute-les pile à la bonne seconde, en un clic.",
+      "path": "gallery/mods/bookmarks",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "b2ce50bfc6288c6d03ad49a11dab006a72d53078ecd02da8bf8e2e8f9e65686b"
+        },
+        {
+          "path": "main.js",
+          "sha256": "01099abb26002c08619beaa2b6f5ee1f33feaeb7eecee0a385674de692d47ec7"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-moments.png",
+            "sha256": "4cc12f7eccd5557fa319cd21ff8e20662872a61d72e866a10b6e863b6b14a3ac"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "2dd7ec3ea760e3769d86bc051eb684d1bb8dfc4c2f367ff03875d4160dbfb29d"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "e5204af476909c077b644f9c1dc64d249dd57987b2e191116e6219a04aab1ee5"
+        },
+        "tags": [
+          "bookmarks",
+          "player",
+          "moments"
+        ]
+      },
+      "updated": "2026-11-26"
     }
   ]
 }
