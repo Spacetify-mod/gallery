@@ -1,0 +1,6 @@
+id = "robot-test-aurora"
+name = "Robot test Aurora"
+version = "1.0.0"
+author = "Robot test"
+description = "A test theme: night green."
+spacetify = ">=0.4.0"

@@ -51,6 +51,36 @@
           "sha256": "0c3c1b50c26d40e88ef9d24e9b988a848d25bc59d98dd910309e0ed49cc05535"
         }
       ]
+    },
+    {
+      "id": "robot-test-aurora",
+      "kind": "theme",
+      "name": "Robot test Aurora",
+      "author": "Robot test",
+      "version": "1.0.0",
+      "description": "A test theme: night green.",
+      "path": "gallery/mods/robot-test-aurora",
+      "files": [
+        {
+          "path": "colors.toml",
+          "sha256": "4657c5c73770e1c24ac758e8432a1600622e096e6990072d76eeb152102c6f50"
+        },
+        {
+          "path": "theme.css",
+          "sha256": "e730fb8d2a8caca0b036a660b793f51ffc910e9a75620d1c8c7431d4c9b90c94"
+        },
+        {
+          "path": "theme.toml",
+          "sha256": "b52ed2f7e816946ea76f8a1a4c2e185f312a65b80441c53ae32a28da8fe9d199"
+        }
+      ],
+      "preview": {
+        "frame": "#000000",
+        "background": "#0b1a1f",
+        "highlight": "#14302f",
+        "text": "#d6f5ef",
+        "accent": "#5eead4"
+      }
     }
   ]
 }
