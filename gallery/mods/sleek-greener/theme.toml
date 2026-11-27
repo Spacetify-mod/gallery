@@ -1,0 +1,8 @@
+# Sleek · Greener, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-greener"
+name = "Sleek · Greener"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Greener colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

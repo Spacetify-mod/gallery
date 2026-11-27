@@ -1,0 +1,8 @@
+# Sleek · Rose Pine, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-rose-pine"
+name = "Sleek · Rose Pine"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Rose Pine colours: a dark background with a red accent."
+spacetify = ">=0.4.0"

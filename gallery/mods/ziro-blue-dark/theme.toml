@@ -1,0 +1,8 @@
+# Ziro · Blue Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-blue-dark"
+name = "Ziro · Blue Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Blue Dark colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

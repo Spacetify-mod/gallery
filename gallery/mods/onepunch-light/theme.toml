@@ -1,0 +1,8 @@
+# Onepunch · Light, a spacetify theme. See docs/themes.md for every field.
+
+id = "onepunch-light"
+name = "Onepunch · Light"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Onepunch theme by okarin001, Light colours: a light background with a green accent."
+spacetify = ">=0.4.0"

@@ -1,0 +1,8 @@
+# Starry Night · Base, a spacetify theme. See docs/themes.md for every field.
+
+id = "starry-night-base"
+name = "Starry Night · Base"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Starry Night theme by Brandon Chen, Julissa Laignelet, Base colours: a dark background with a yellow accent."
+spacetify = ">=0.4.0"

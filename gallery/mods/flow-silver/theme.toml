@@ -1,0 +1,8 @@
+# Flow · Silver, a spacetify theme. See docs/themes.md for every field.
+
+id = "flow-silver"
+name = "Flow · Silver"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Flow theme by Ian Liao, Victoria Zhang, Yu Sung Lee, Alex Casieri, Silver colours: a light background with a grey accent."
+spacetify = ">=0.4.0"

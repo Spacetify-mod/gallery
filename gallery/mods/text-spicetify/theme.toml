@@ -1,0 +1,8 @@
+# Text · Spicetify, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-spicetify"
+name = "Text · Spicetify"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Spicetify colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

@@ -1,0 +1,8 @@
+# Sleek · Deep, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-deep"
+name = "Sleek · Deep"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Deep colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

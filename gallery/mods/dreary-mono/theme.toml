@@ -1,0 +1,8 @@
+# Dreary · Mono, a spacetify theme. See docs/themes.md for every field.
+
+id = "dreary-mono"
+name = "Dreary · Mono"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dreary theme by CharlieS1103, Mono colours: a dark background with a grey accent."
+spacetify = ">=0.4.0"

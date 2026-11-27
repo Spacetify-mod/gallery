@@ -1,0 +1,8 @@
+# Text · Solarized, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-solarized"
+name = "Text · Solarized"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Solarized colours: a dark background with a yellow accent."
+spacetify = ">=0.4.0"

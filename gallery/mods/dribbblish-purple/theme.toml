@@ -1,0 +1,8 @@
+# Dribbblish · Purple, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-purple"
+name = "Dribbblish · Purple"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Purple colours: a dark background with a purple accent."
+spacetify = ">=0.4.0"

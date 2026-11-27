@@ -1,0 +1,8 @@
+# Matte · Periwinkle, a spacetify theme. See docs/themes.md for every field.
+
+id = "matte-periwinkle"
+name = "Matte · Periwinkle"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Matte theme by darkthemer, Periwinkle colours: a light background with a blue accent."
+spacetify = ">=0.4.0"

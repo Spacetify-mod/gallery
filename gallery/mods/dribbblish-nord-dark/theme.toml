@@ -1,0 +1,8 @@
+# Dribbblish · Nord Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-nord-dark"
+name = "Dribbblish · Nord Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Nord Dark colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

@@ -1,0 +1,67 @@
+/*
+ * Text · Everforest Dark Soft: small touches on top of colors.toml.
+ *
+ * Only stable hooks: Spotify's colour variables, `data-testid` attributes
+ * and a few readable classes, never generated class names.
+ * `spacetify doctor` checks them.
+ */
+
+/*
+ * The frame around the panels. Spotify paints it black directly, without
+ * its colour variables, so colors.toml cannot reach it. These selectors
+ * colour, in order: the space between the panels, the top bar and the
+ * player bar. Each one matches a single element (checked in Spotify
+ * 1.3.10), found from hooks that `spacetify doctor` can verify.
+ */
+:root {
+  --spacetify-frame: #242a2f;
+}
+div:has(> div > [data-testid="now-playing-bar"]),
+.Root > div > div:has([data-testid="top-bar-forward-button"]),
+div:has(> [data-testid="now-playing-bar"]) {
+  background-color: var(--spacetify-frame) !important;
+}
+
+/* Selected text takes the accent colour. */
+::selection {
+  background-color: color-mix(in srgb, var(--essential-bright-accent) 35%, transparent);
+  color: var(--text-base);
+}
+
+/* The keyboard focus ring matches the accent. */
+:focus-visible {
+  outline-color: var(--essential-bright-accent);
+}
+
+/* A thin accent line above the player bar. */
+[data-testid="now-playing-bar"] {
+  border-top: 1px solid color-mix(in srgb, var(--essential-bright-accent) 35%, transparent);
+}
+
+/*
+ * Spotify paints a few things in fixed colours instead of its variables:
+ * links in white, and the toggle buttons of the player bar in white or
+ * Spotify green. They take the theme's colours here. Links in the header
+ * of a page stay as they are: they sit on the colours of its cover.
+ */
+a:not([data-encore-id]):not([data-testid="entity-header"] a) {
+  color: var(--text-base);
+}
+[data-testid="now-playing-bar"] button[aria-pressed="false"] {
+  color: var(--text-subdued);
+}
+[data-testid="now-playing-bar"] button[aria-pressed="false"]:hover {
+  color: var(--text-base);
+}
+[data-testid="now-playing-bar"] button[aria-pressed="true"] {
+  color: var(--essential-bright-accent);
+}
+
+/* Text: everything in a monospace font, like a terminal app. */
+body,
+button,
+input,
+textarea {
+  font-family: "Cascadia Mono", "Cascadia Code", Consolas, "DejaVu Sans Mono", Menlo, monospace !important;
+  letter-spacing: 0 !important;
+}

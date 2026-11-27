@@ -1,0 +1,81 @@
+/*
+ * Starry Night · Sunrise: small touches on top of colors.toml.
+ *
+ * Only stable hooks: Spotify's colour variables, `data-testid` attributes
+ * and a few readable classes, never generated class names.
+ * `spacetify doctor` checks them.
+ */
+
+/*
+ * The frame around the panels. Spotify paints it black directly, without
+ * its colour variables, so colors.toml cannot reach it. These selectors
+ * colour, in order: the space between the panels, the top bar and the
+ * player bar. Each one matches a single element (checked in Spotify
+ * 1.3.10), found from hooks that `spacetify doctor` can verify.
+ */
+:root {
+  --spacetify-frame: #181818;
+}
+div:has(> div > [data-testid="now-playing-bar"]),
+.Root > div > div:has([data-testid="top-bar-forward-button"]),
+div:has(> [data-testid="now-playing-bar"]) {
+  background-color: var(--spacetify-frame) !important;
+}
+
+/* Selected text takes the accent colour. */
+::selection {
+  background-color: color-mix(in srgb, var(--essential-bright-accent) 35%, transparent);
+  color: var(--text-base);
+}
+
+/* The keyboard focus ring matches the accent. */
+:focus-visible {
+  outline-color: var(--essential-bright-accent);
+}
+
+/* A thin accent line above the player bar. */
+[data-testid="now-playing-bar"] {
+  border-top: 1px solid color-mix(in srgb, var(--essential-bright-accent) 35%, transparent);
+}
+
+/*
+ * Spotify paints a few things in fixed colours instead of its variables:
+ * links in white, and the toggle buttons of the player bar in white or
+ * Spotify green. They take the theme's colours here. Links in the header
+ * of a page stay as they are: they sit on the colours of its cover.
+ */
+a:not([data-encore-id]):not([data-testid="entity-header"] a) {
+  color: var(--text-base);
+}
+[data-testid="now-playing-bar"] button[aria-pressed="false"] {
+  color: var(--text-subdued);
+}
+[data-testid="now-playing-bar"] button[aria-pressed="false"]:hover {
+  color: var(--text-base);
+}
+[data-testid="now-playing-bar"] button[aria-pressed="true"] {
+  color: var(--essential-bright-accent);
+}
+
+/* Starry Night: stars twinkle in the frame around the panels. */
+:root {
+  --stsn-star: #ffffff;
+}
+div:has(> div > [data-testid="now-playing-bar"]) {
+  background-image:
+    radial-gradient(1.5px 1.5px at 20px 30px, var(--stsn-star) 50%, transparent 51%),
+    radial-gradient(1px 1px at 90px 120px, var(--stsn-star) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 160px 60px, var(--stsn-star) 50%, transparent 51%),
+    radial-gradient(1px 1px at 230px 170px, var(--stsn-star) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 300px 20px, var(--stsn-star) 50%, transparent 51%),
+    radial-gradient(1px 1px at 370px 140px, var(--stsn-star) 50%, transparent 51%);
+  background-size: 400px 200px;
+  animation: stsn-twinkle 6s ease-in-out infinite alternate;
+}
+@keyframes stsn-twinkle {
+  from { background-position: 0 0; }
+  to { background-position: 40px 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  div:has(> div > [data-testid="now-playing-bar"]) { animation: none; }
+}

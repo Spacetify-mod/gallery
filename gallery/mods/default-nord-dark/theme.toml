@@ -1,0 +1,8 @@
+# Spicetify Default · Nord Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "default-nord-dark"
+name = "Spicetify Default · Nord Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Spicetify Default theme by the Spicetify team, Nord Dark colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

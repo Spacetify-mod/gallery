@@ -1,0 +1,8 @@
+# Ziro · Red Light, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-red-light"
+name = "Ziro · Red Light"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Red Light colours: a light background with a red accent."
+spacetify = ">=0.4.0"

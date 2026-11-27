@@ -1,0 +1,8 @@
+# Ziro · Green Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-green-dark"
+name = "Ziro · Green Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Green Dark colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

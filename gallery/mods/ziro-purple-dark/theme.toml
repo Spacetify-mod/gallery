@@ -1,0 +1,8 @@
+# Ziro · Purple Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-purple-dark"
+name = "Ziro · Purple Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Purple Dark colours: a dark background with a purple accent."
+spacetify = ">=0.4.0"

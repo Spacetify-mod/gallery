@@ -1,0 +1,8 @@
+# Shark Blue, a spacetify theme. See docs/themes.md for every field.
+
+id = "shark-blue"
+name = "Shark Blue"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Shark Blue theme by Mr Biscuit: deep shark blues."
+spacetify = ">=0.4.0"

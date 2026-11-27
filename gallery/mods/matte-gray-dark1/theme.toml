@@ -1,0 +1,8 @@
+# Matte · Gray Dark1, a spacetify theme. See docs/themes.md for every field.
+
+id = "matte-gray-dark1"
+name = "Matte · Gray Dark1"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Matte theme by darkthemer, Gray Dark1 colours: a dark background with a grey accent."
+spacetify = ">=0.4.0"

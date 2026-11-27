@@ -1,0 +1,8 @@
+# Matte · Gray Light, a spacetify theme. See docs/themes.md for every field.
+
+id = "matte-gray-light"
+name = "Matte · Gray Light"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Matte theme by darkthemer, Gray Light colours: a light background with a blue accent."
+spacetify = ">=0.4.0"

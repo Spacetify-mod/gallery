@@ -1,0 +1,8 @@
+# Ziro · Rose Pine, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-rose-pine"
+name = "Ziro · Rose Pine"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Rose Pine colours: a dark background with a red accent."
+spacetify = ">=0.4.0"

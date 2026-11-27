@@ -1,0 +1,8 @@
+# Text · Kanagawa, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-kanagawa"
+name = "Text · Kanagawa"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Kanagawa colours: a dark background with a grey accent."
+spacetify = ">=0.4.0"

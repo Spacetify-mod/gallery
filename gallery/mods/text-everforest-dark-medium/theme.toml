@@ -1,0 +1,8 @@
+# Text · Everforest Dark Medium, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-everforest-dark-medium"
+name = "Text · Everforest Dark Medium"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Everforest Dark Medium colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

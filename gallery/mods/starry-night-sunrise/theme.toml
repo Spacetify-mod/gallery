@@ -1,0 +1,8 @@
+# Starry Night · Sunrise, a spacetify theme. See docs/themes.md for every field.
+
+id = "starry-night-sunrise"
+name = "Starry Night · Sunrise"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Starry Night theme by Brandon Chen, Julissa Laignelet, Sunrise colours: a dark background with a yellow accent."
+spacetify = ">=0.4.0"

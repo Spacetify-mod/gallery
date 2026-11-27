@@ -1,0 +1,8 @@
+# Matte · Matte, a spacetify theme. See docs/themes.md for every field.
+
+id = "matte-matte"
+name = "Matte · Matte"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Matte theme by darkthemer, Matte colours: a dark background with a teal accent."
+spacetify = ">=0.4.0"

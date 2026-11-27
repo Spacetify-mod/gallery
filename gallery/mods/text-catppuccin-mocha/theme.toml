@@ -1,0 +1,8 @@
+# Text · Catppuccin Mocha, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-catppuccin-mocha"
+name = "Text · Catppuccin Mocha"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Catppuccin Mocha colours: a dark background with a purple accent."
+spacetify = ">=0.4.0"

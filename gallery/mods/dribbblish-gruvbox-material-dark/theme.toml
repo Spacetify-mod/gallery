@@ -1,0 +1,8 @@
+# Dribbblish · Gruvbox Material Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-gruvbox-material-dark"
+name = "Dribbblish · Gruvbox Material Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Gruvbox Material Dark colours: a dark background with a yellow accent."
+spacetify = ">=0.4.0"

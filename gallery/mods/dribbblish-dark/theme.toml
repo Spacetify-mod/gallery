@@ -1,0 +1,8 @@
+# Dribbblish · Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-dark"
+name = "Dribbblish · Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Dark colours: a dark background with a yellow accent."
+spacetify = ">=0.4.0"

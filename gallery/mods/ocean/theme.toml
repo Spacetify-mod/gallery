@@ -1,0 +1,8 @@
+# Ocean, a spacetify theme. See docs/themes.md for every field.
+
+id = "ocean"
+name = "Ocean"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ocean theme by Blacksuan19: the Default theme of spicetify-themes, deep ocean blues."
+spacetify = ">=0.4.0"

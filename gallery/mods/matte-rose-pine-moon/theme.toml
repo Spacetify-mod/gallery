@@ -1,0 +1,8 @@
+# Matte · Rose Pine Moon, a spacetify theme. See docs/themes.md for every field.
+
+id = "matte-rose-pine-moon"
+name = "Matte · Rose Pine Moon"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Matte theme by darkthemer, Rose Pine Moon colours: a dark background with a red accent."
+spacetify = ">=0.4.0"

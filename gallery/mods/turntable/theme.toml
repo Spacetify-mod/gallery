@@ -1,0 +1,8 @@
+# Turntable, a spacetify theme. See docs/themes.md for every field.
+
+id = "turntable"
+name = "Turntable"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Turntable theme by Grason Chan: a record that turns in the player bar."
+spacetify = ">=0.4.0"

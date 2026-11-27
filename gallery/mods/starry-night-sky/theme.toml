@@ -1,0 +1,8 @@
+# Starry Night · Sky, a spacetify theme. See docs/themes.md for every field.
+
+id = "starry-night-sky"
+name = "Starry Night · Sky"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Starry Night theme by Brandon Chen, Julissa Laignelet, Sky colours: a dark background with a yellow accent."
+spacetify = ">=0.4.0"

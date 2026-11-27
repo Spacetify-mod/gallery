@@ -1,0 +1,8 @@
+# Starry Night · Cotton Candy, a spacetify theme. See docs/themes.md for every field.
+
+id = "starry-night-cotton-candy"
+name = "Starry Night · Cotton Candy"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Starry Night theme by Brandon Chen, Julissa Laignelet, Cotton Candy colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

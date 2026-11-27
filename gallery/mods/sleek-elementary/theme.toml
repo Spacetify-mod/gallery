@@ -1,0 +1,8 @@
+# Sleek · Elementary, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-elementary"
+name = "Sleek · Elementary"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Elementary colours: a dark background with a red accent."
+spacetify = ">=0.4.0"

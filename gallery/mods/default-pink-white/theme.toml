@@ -1,0 +1,8 @@
+# Spicetify Default · Pink White, a spacetify theme. See docs/themes.md for every field.
+
+id = "default-pink-white"
+name = "Spicetify Default · Pink White"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Spicetify Default theme by the Spicetify team, Pink White colours: a light background with a red accent."
+spacetify = ">=0.4.0"

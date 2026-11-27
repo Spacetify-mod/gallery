@@ -1,0 +1,8 @@
+# Burnt Sienna, a spacetify theme. See docs/themes.md for every field.
+
+id = "burnt-sienna"
+name = "Burnt Sienna"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Burnt Sienna theme by pjaspinski: warm burnt sienna tones."
+spacetify = ">=0.4.0"

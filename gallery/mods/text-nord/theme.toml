@@ -1,0 +1,8 @@
+# Text · Nord, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-nord"
+name = "Text · Nord"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Nord colours: a dark background with a teal accent."
+spacetify = ">=0.4.0"

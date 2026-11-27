@@ -1,0 +1,8 @@
+# Sleek · Ayu Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-ayu-dark"
+name = "Sleek · Ayu Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Ayu Dark colours: a dark background with a grey accent."
+spacetify = ">=0.4.0"

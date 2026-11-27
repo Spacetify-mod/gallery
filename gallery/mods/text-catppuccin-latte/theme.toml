@@ -1,0 +1,8 @@
+# Text · Catppuccin Latte, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-catppuccin-latte"
+name = "Text · Catppuccin Latte"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Catppuccin Latte colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

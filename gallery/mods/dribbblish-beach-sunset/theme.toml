@@ -1,0 +1,8 @@
+# Dribbblish · Beach Sunset, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-beach-sunset"
+name = "Dribbblish · Beach Sunset"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Beach Sunset colours: a dark background with a orange accent."
+spacetify = ">=0.4.0"

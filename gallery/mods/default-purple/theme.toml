@@ -1,0 +1,8 @@
+# Spicetify Default · Purple, a spacetify theme. See docs/themes.md for every field.
+
+id = "default-purple"
+name = "Spicetify Default · Purple"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Spicetify Default theme by the Spicetify team, Purple colours: a dark background with a purple accent."
+spacetify = ">=0.4.0"

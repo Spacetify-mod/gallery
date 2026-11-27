@@ -1,0 +1,8 @@
+# Ziro · Purple Light, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-purple-light"
+name = "Ziro · Purple Light"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Purple Light colours: a light background with a purple accent."
+spacetify = ">=0.4.0"

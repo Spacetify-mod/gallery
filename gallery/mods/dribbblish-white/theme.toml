@@ -1,0 +1,8 @@
+# Dribbblish · White, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-white"
+name = "Dribbblish · White"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, White colours: a light background with a red accent."
+spacetify = ">=0.4.0"

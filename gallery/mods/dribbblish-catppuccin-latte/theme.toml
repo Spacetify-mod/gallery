@@ -1,0 +1,8 @@
+# Dribbblish · Catppuccin Latte, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-catppuccin-latte"
+name = "Dribbblish · Catppuccin Latte"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Catppuccin Latte colours: a light background with a grey accent."
+spacetify = ">=0.4.0"

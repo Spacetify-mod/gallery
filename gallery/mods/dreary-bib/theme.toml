@@ -1,0 +1,8 @@
+# Dreary · BIB, a spacetify theme. See docs/themes.md for every field.
+
+id = "dreary-bib"
+name = "Dreary · BIB"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dreary theme by CharlieS1103, BIB colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

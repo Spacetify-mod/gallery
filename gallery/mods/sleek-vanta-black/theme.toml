@@ -1,0 +1,8 @@
+# Sleek · Vanta Black, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-vanta-black"
+name = "Sleek · Vanta Black"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Vanta Black colours: a dark background with a grey accent."
+spacetify = ">=0.4.0"

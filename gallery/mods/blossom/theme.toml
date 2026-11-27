@@ -1,0 +1,8 @@
+# Blossom, a spacetify theme. See docs/themes.md for every field.
+
+id = "blossom"
+name = "Blossom"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Blossom theme by Robatortas: a simple dark theme with soft blue-grey tones."
+spacetify = ">=0.4.0"

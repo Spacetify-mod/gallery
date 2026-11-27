@@ -1,0 +1,8 @@
+# Text · Rose Pine Dawn, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-rose-pine-dawn"
+name = "Text · Rose Pine Dawn"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Rose Pine Dawn colours: a light background with a red accent."
+spacetify = ">=0.4.0"

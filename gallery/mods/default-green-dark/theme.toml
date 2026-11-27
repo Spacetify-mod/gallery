@@ -1,0 +1,8 @@
+# Spicetify Default · Green Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "default-green-dark"
+name = "Spicetify Default · Green Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Spicetify Default theme by the Spicetify team, Green Dark colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

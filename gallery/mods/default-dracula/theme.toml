@@ -1,0 +1,8 @@
+# Spicetify Default · Dracula, a spacetify theme. See docs/themes.md for every field.
+
+id = "default-dracula"
+name = "Spicetify Default · Dracula"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Spicetify Default theme by the Spicetify team, Dracula colours: a dark background with a orange accent."
+spacetify = ">=0.4.0"

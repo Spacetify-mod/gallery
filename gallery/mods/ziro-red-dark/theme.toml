@@ -1,0 +1,8 @@
+# Ziro · Red Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-red-dark"
+name = "Ziro · Red Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Red Dark colours: a dark background with a red accent."
+spacetify = ">=0.4.0"

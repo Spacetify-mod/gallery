@@ -1,0 +1,8 @@
+# Matte · Porcelain, a spacetify theme. See docs/themes.md for every field.
+
+id = "matte-porcelain"
+name = "Matte · Porcelain"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Matte theme by darkthemer, Porcelain colours: a light background with a blue accent."
+spacetify = ">=0.4.0"

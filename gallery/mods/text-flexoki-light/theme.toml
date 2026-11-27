@@ -1,0 +1,8 @@
+# Text · Flexoki Light, a spacetify theme. See docs/themes.md for every field.
+
+id = "text-flexoki-light"
+name = "Text · Flexoki Light"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Text theme by darkthemer, Flexoki Light colours: a light background with a teal accent."
+spacetify = ">=0.4.0"

@@ -1,0 +1,8 @@
+# Nightlight, a spacetify theme. See docs/themes.md for every field.
+
+id = "nightlight"
+name = "Nightlight"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Nightlight theme by the Spicetify team: a dim night-light glow."
+spacetify = ">=0.4.0"

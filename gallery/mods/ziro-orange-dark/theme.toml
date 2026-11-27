@@ -1,0 +1,8 @@
+# Ziro · Orange Dark, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-orange-dark"
+name = "Ziro · Orange Dark"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Orange Dark colours: a dark background with a orange accent."
+spacetify = ">=0.4.0"

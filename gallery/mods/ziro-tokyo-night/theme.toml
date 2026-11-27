@@ -1,0 +1,8 @@
+# Ziro · Tokyo Night, a spacetify theme. See docs/themes.md for every field.
+
+id = "ziro-tokyo-night"
+name = "Ziro · Tokyo Night"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Ziro theme by schnensch0, Tokyo Night colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

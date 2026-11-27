@@ -1,0 +1,8 @@
+# Onepunch · Legacy, a spacetify theme. See docs/themes.md for every field.
+
+id = "onepunch-legacy"
+name = "Onepunch · Legacy"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Onepunch theme by okarin001, Legacy colours: a dark background with a green accent."
+spacetify = ">=0.4.0"

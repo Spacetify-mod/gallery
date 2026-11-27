@@ -1,0 +1,8 @@
+# Dribbblish · Gruvbox, a spacetify theme. See docs/themes.md for every field.
+
+id = "dribbblish-gruvbox"
+name = "Dribbblish · Gruvbox"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Dribbblish theme by khanhas, harbassan, Gruvbox colours: a dark background with a red accent."
+spacetify = ">=0.4.0"

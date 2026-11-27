@@ -1,0 +1,8 @@
+# Sleek · Tokyo Night, a spacetify theme. See docs/themes.md for every field.
+
+id = "sleek-tokyo-night"
+name = "Sleek · Tokyo Night"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Sleek theme by harbassan, Tokyo Night colours: a dark background with a blue accent."
+spacetify = ">=0.4.0"

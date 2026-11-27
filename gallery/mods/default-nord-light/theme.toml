@@ -1,0 +1,8 @@
+# Spicetify Default · Nord Light, a spacetify theme. See docs/themes.md for every field.
+
+id = "default-nord-light"
+name = "Spicetify Default · Nord Light"
+version = "1.0.0"
+author = "spacetify"
+description = "Spicetify's Spicetify Default theme by the Spicetify team, Nord Light colours: a light background with a teal accent."
+spacetify = ">=0.4.0"
