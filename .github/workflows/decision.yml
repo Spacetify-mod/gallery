@@ -1,0 +1,81 @@
+# Tells the author of a mod what the maintainers decided, as soon as they
+# decide: merging the robot's pull request accepts the mod, closing it
+# refuses it. The reason sent to the author is the maintainers' last
+# comment on the pull request.
+
+name: Gallery decision
+
+on:
+  pull_request:
+    types: [closed]
+
+permissions: {}
+
+jobs:
+  answer:
+    if: >-
+      startsWith(github.event.pull_request.head.ref, 'submission/') &&
+      github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: read
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      PR: ${{ github.event.pull_request.number }}
+      BRANCH: ${{ github.event.pull_request.head.ref }}
+      MERGED: ${{ github.event.pull_request.merged }}
+    steps:
+      - name: Answer the author
+        run: |
+          # GitHub stops a script at the first failing command; this one
+          # checks each result itself (ClamAV, for one, "fails" when it finds
+          # a virus).
+          set +e
+          set -uo pipefail
+          issue="${BRANCH#submission/}"
+          case "$issue" in ''|*[!0-9]*) exit 0 ;; esac
+          out="$RUNNER_TEMP/comment.md"
+
+          if [ "$MERGED" = "true" ]; then
+            {
+              echo "**Accepted by the spacetify team.** The mod is in the gallery: it shows in everyone's gallery within a few minutes."
+              echo
+              echo "**Accepté par l'équipe spacetify.** Le mod est dans la galerie : il apparaît dans la galerie de tout le monde d'ici quelques minutes."
+            } > "$out"
+            gh issue comment "$issue" --repo "$REPO" --body-file "$out"
+            gh issue close "$issue" --repo "$REPO" --reason completed || true
+            # The jsDelivr mirror keeps the list for hours: ask it to forget.
+            curl --fail --silent --max-time 30 \
+              "https://purge.jsdelivr.net/gh/$REPO@main/gallery/index.json" || true
+          else
+            closer="$(gh api "repos/$REPO/issues/$PR/events" \
+              --jq '[.[] | select(.event == "closed")] | last | .actor.login // ""')"
+            # The robot closes pull requests itself when a request changes:
+            # the author already has its answer.
+            if [ "$closer" = "github-actions[bot]" ]; then
+              exit 0
+            fi
+            gh api "repos/$REPO/issues/$PR/comments" --paginate \
+              --jq '[.[] | select(.author_association == "OWNER" or .author_association == "MEMBER" or .author_association == "COLLABORATOR") | select(.user.login != "github-actions[bot]")] | last | .body // ""' \
+              > "$RUNNER_TEMP/reason.txt"
+            {
+              echo "**Refused by the spacetify team.** / **Refusé par l'équipe spacetify.**"
+              echo
+              if [ -s "$RUNNER_TEMP/reason.txt" ] && [ -n "$(tr -d '[:space:]' < "$RUNNER_TEMP/reason.txt")" ]; then
+                echo "Reason / Raison :"
+                echo
+                sed 's/^/> /' "$RUNNER_TEMP/reason.txt"
+              else
+                echo "No reason was given. / Aucune raison n'a été donnée."
+              fi
+              echo
+              echo "You can fix the mod and send a new request. / Tu peux corriger le mod et faire une nouvelle demande."
+            } > "$out"
+            gh issue comment "$issue" --repo "$REPO" --body-file "$out"
+            gh issue close "$issue" --repo "$REPO" --reason "not planned" || true
+          fi
+
+          gh api --method DELETE "repos/$REPO/git/refs/heads/$BRANCH" || true

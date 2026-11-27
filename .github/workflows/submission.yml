@@ -1,0 +1,226 @@
+# The gallery's robot. When someone sends a mod with the "Submit a mod"
+# form, it downloads the mod, checks it (spacetify's own checks, the ClamAV
+# antivirus, hidden code, web addresses…) and answers on the request. If
+# nothing is blocking, it opens a pull request that adds the mod to
+# gallery/index.json: merging it accepts the mod, closing it refuses it
+# (see decision.yml).
+#
+# The mod is untrusted: it is only read, never run. The request's text goes
+# through environment variables and files, never into a command line.
+
+name: Gallery submission
+
+on:
+  issues:
+    types: [opened, edited, reopened]
+
+permissions: {}
+
+concurrency:
+  group: gallery-submission-${{ github.event.issue.number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    if: >-
+      github.event.issue.state == 'open' &&
+      (contains(github.event.issue.labels.*.name, 'gallery-submission') ||
+       contains(github.event.issue.body, '### Mod name / Nom du mod'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+      issues: write
+      pull-requests: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      REPO: ${{ github.repository }}
+      ISSUE: ${{ github.event.issue.number }}
+      AUTHOR: ${{ github.event.issue.user.login }}
+      BRANCH: submission/${{ github.event.issue.number }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      # The checks are spacetify's own: its code lives in spacetify-mod/spacetify.
+      - uses: actions/checkout@v4
+        with:
+          repository: spacetify-mod/spacetify
+          path: .spacetify-app
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: .spacetify-app
+
+      - name: Build spacetify
+        run: cargo build --manifest-path .spacetify-app/Cargo.toml -p spacetify-cli --locked
+
+      - name: Install the antivirus
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clamav
+          sudo systemctl stop clamav-freshclam || true
+          sudo freshclam
+
+      - name: Check the request
+        env:
+          BODY: ${{ github.event.issue.body }}
+        run: |
+          # GitHub stops a script at the first failing command; this one
+          # checks each result itself (ClamAV, for one, "fails" when it finds
+          # a virus).
+          set +e
+          set -uo pipefail
+          cli="$PWD/.spacetify-app/target/debug/spacetify"
+          work="$RUNNER_TEMP/work"
+          mkdir -p "$work"
+          printf '%s\n' "$BODY" > "$work/body.md"
+
+          # Text from the request is put in a code block, without backticks,
+          # so it cannot format the comment or mention anyone.
+          quote() { printf '```text\n%s\n```\n' "$(tr -d '`' < "$1")"; }
+
+          answer() {
+            gh issue comment "$ISSUE" --repo "$REPO" --body-file "$1"
+          }
+
+          # An earlier pull request for this request is out of date once the
+          # request has a problem.
+          close_old() {
+            old="$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+            if [ -n "$old" ]; then
+              gh pr close "$old" --repo "$REPO" --delete-branch \
+                --comment "Closed by the robot: the request changed and now has a problem. / Fermée par le robot : la demande a changé et a maintenant un problème." || true
+            fi
+          }
+
+          # Answers with the error in `$1` (JSON from spacetify) and stops.
+          refuse() {
+            jq -r '.error.en' "$1" > "$work/en.txt"
+            jq -r '.error.fr' "$1" > "$work/fr.txt"
+            {
+              echo "**The robot could not check this request.**"
+              quote "$work/en.txt"
+              echo "**Le robot n'a pas pu vérifier cette demande.**"
+              quote "$work/fr.txt"
+              echo
+              echo "Edit the request to fix it: the robot checks it again. / Modifie la demande pour corriger : le robot la vérifie à nouveau."
+            } > "$work/comment.md"
+            answer "$work/comment.md"
+            gh issue edit "$ISSUE" --repo "$REPO" --add-label needs-changes || true
+            close_old
+            exit 0
+          }
+
+          # 1. Read the form.
+          "$cli" gallery form "$work/body.md" --json "$work/form.json" || exit 1
+          jq -e '.ok' "$work/form.json" > /dev/null || refuse "$work/form.json"
+
+          # 2. Download the mod, from GitHub only.
+          url="$(jq -r '.origin.url' "$work/form.json")"
+          case "$url" in
+            https://github.com/user-attachments/files/*|https://github.com/spacetify-mod/gallery/files/*|https://codeload.github.com/*) ;;
+            *) echo "unexpected address" >&2; exit 1 ;;
+          esac
+          if ! curl --fail --silent --show-error --location --proto '=https' --max-redirs 5 \
+               --max-filesize 26214400 --max-time 120 --output "$work/mod.zip" "$url"; then
+            printf '%s\n' '{"error":{"en":"The .zip or the repository could not be downloaded. Check that it is public and that the tag exists.","fr":"Le .zip ou le dépôt n'"'"'a pas pu être téléchargé. Vérifie qu'"'"'il est public et que le tag existe."}}' > "$work/download.json"
+            refuse "$work/download.json"
+          fi
+
+          # 3. Open it safely.
+          folder="$(jq -r '.folder // empty' "$work/form.json")"
+          "$cli" gallery unpack "$work/mod.zip" "$work/mod" ${folder:+--folder "$folder"} --json "$work/unpack.json" || exit 1
+          jq -e '.ok' "$work/unpack.json" > /dev/null || refuse "$work/unpack.json"
+
+          # 4. Antivirus, then the review, compared with the version already
+          #    in the gallery for an update.
+          clamscan --recursive "$work/mod" > "$work/clamav.txt" 2>&1
+          cat "$work/clamav.txt"
+          "$cli" gallery review "$work/mod" --repo . --antivirus "$work/clamav.txt" \
+            --json "$work/report.json" || exit 1
+          id="$(jq -r '.id // empty' "$work/report.json")"
+          blocking="$(jq -r '.blocking' "$work/report.json")"
+          base="https://github.com/$REPO/blob/$BRANCH/gallery/mods/{id}"
+
+          if [ "$blocking" -gt 0 ]; then
+            "$cli" gallery review "$work/mod" --repo . --antivirus "$work/clamav.txt" \
+              --markdown "$work/report.md" || exit 1
+            {
+              echo "**The robot found something blocking.** Fix it in the mod, then edit this request with the new .zip: the robot checks it again."
+              echo
+              echo "**Le robot a trouvé quelque chose de bloquant.** Corrige-le dans le mod, puis modifie cette demande avec le nouveau .zip : le robot la vérifie à nouveau."
+              echo
+              cat "$work/report.md"
+            } > "$work/comment.md"
+            answer "$work/comment.md"
+            gh issue edit "$ISSUE" --repo "$REPO" --add-label needs-changes || true
+            close_old
+            exit 0
+          fi
+          "$cli" gallery review "$work/mod" --repo . --antivirus "$work/clamav.txt" \
+            --markdown "$work/report.md" --link-base "$base" || exit 1
+
+          # 5. Add the mod to the list, on a branch of its own.
+          git switch --create "$BRANCH" || exit 1
+          "$cli" gallery add "$work/mod" --repo . --owner "$AUTHOR" \
+            --form "$work/body.md" --json "$work/added.json" || exit 1
+          jq -e '.ok' "$work/added.json" > /dev/null || refuse "$work/added.json"
+          name="$(jq -r '.name' "$work/added.json")"
+          version="$(jq -r '.version' "$work/added.json")"
+          kind="$(jq -r '.kind' "$work/added.json")"
+          previous="$(jq -r '.previous // empty' "$work/added.json")"
+          if [ -n "$previous" ]; then
+            title="Update $name from $previous to $version ($kind)"
+          else
+            title="Add $name $version ($kind)"
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add gallery/index.json gallery/owners.json "gallery/mods/$id" || exit 1
+          git commit --quiet --message "$title" --message "Requested in #$ISSUE by $AUTHOR." || exit 1
+          git push --force --quiet origin "$BRANCH" || exit 1
+
+          # 6. The pull request the maintainers accept or refuse.
+          {
+            echo "Requested by $AUTHOR in #$ISSUE. Closes #$ISSUE."
+            echo
+            echo "**To accept:** merge this pull request. The mod shows in everyone's gallery within a few minutes."
+            echo "**To refuse:** write the reason in a comment, then close the pull request. The robot sends the reason to the author."
+            echo
+            echo "**Accepter :** fusionner cette demande. Le mod apparaît dans la galerie de tout le monde en quelques minutes."
+            echo "**Refuser :** écrire la raison en commentaire, puis fermer la demande. Le robot envoie la raison à l'auteur."
+            echo
+            cat "$work/report.md"
+          } > "$work/pr.md"
+          pr="$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq '.[0].number // empty')"
+          if [ -n "$pr" ]; then
+            gh pr edit "$pr" --repo "$REPO" --title "$title" --body-file "$work/pr.md" || exit 1
+          else
+            gh pr create --repo "$REPO" --base "${{ github.event.repository.default_branch }}" \
+              --head "$BRANCH" --title "$title" --body-file "$work/pr.md" || exit 1
+            pr="$(gh pr list --repo "$REPO" --head "$BRANCH" --state open --json number --jq '.[0].number')"
+          fi
+          gh pr edit "$pr" --repo "$REPO" --add-label gallery-submission || true
+
+          summary="$(jq -r '"\(.to_look_at) to look at · \(.blocking) blocking"' "$work/report.json")"
+          resume="$(jq -r '"\(.to_look_at) à regarder · \(.blocking) bloquant"' "$work/report.json")"
+          {
+            echo "**Thank you!** The robot checked the mod: nothing blocking ($summary). It now waits for the spacetify team, who accepts or refuses it in #$pr."
+            echo
+            echo "**Merci !** Le robot a vérifié le mod : rien de bloquant ($resume). Il attend maintenant l'équipe spacetify, qui l'accepte ou le refuse dans #$pr."
+          } > "$work/comment.md"
+          answer "$work/comment.md"
+          gh issue edit "$ISSUE" --repo "$REPO" --remove-label needs-changes || true
+
+      - name: Keep the full report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: report-${{ github.event.issue.number }}
+          path: |
+            ${{ runner.temp }}/work/report.json
+            ${{ runner.temp }}/work/report.md
+            ${{ runner.temp }}/work/clamav.txt
+          if-no-files-found: ignore

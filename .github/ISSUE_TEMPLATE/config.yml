@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: A problem with the spacetify app / Un problème avec l'appli spacetify
+    url: https://github.com/spacetify-mod/spacetify/issues
+    about: Bugs and ideas for the app go to its own repository. / Les bugs et idées pour l'appli vont dans son propre dépôt.

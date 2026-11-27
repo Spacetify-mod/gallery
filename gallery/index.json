@@ -9,7 +9,7 @@
       "version": "1.0.0",
       "description": "Deep blue backgrounds with a violet accent.",
       "description_fr": "Des fonds bleu nuit et une touche de violet.",
-      "path": "examples/themes/midnight",
+      "path": "gallery/mods/midnight",
       "files": [
         {
           "path": "colors.toml",
@@ -40,7 +40,7 @@
       "version": "1.0.0",
       "description": "Shows a small badge above the player bar, to check that extensions work.",
       "description_fr": "Un petit badge au-dessus de la barre de lecture, pour vérifier que les extensions marchent.",
-      "path": "examples/extensions/hello-badge",
+      "path": "gallery/mods/hello-badge",
       "files": [
         {
           "path": "extension.toml",

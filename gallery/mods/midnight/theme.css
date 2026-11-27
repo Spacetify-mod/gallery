@@ -1,0 +1,13 @@
+/*
+ * Midnight: extra touches on top of colors.toml.
+ *
+ * Only stable hooks are used: Spotify's colour variables and `data-testid`
+ * attributes. Never rely on generated class names such as
+ * `.gyQ3lHdZrOLMpQhHd2rw`: they can change with any Spotify update.
+ * `spacetify doctor` checks every selector below.
+ */
+
+/* A thin violet line above the player bar. */
+[data-testid="now-playing-bar"] {
+  border-top: 1px solid color-mix(in srgb, var(--essential-bright-accent) 45%, transparent);
+}

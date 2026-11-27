@@ -1,0 +1,41 @@
+# Colours of the Midnight theme.
+#
+# Each [section] is one of Spotify's colour sets, and each key one of its
+# colour tokens. Anything you leave out keeps Spotify's own colour.
+# The full list of sections and colours is in docs/themes.md.
+
+# The general look of the app.
+[base]
+background-base = "#0f1020"
+background-highlight = "#1c1e36"
+background-press = "#090a14"
+background-elevated-base = "#1c1e36"
+background-elevated-highlight = "#272a47"
+background-elevated-press = "#151729"
+text-subdued = "#a9abc9"
+text-bright-accent = "#a78bfa"
+text-positive = "#a78bfa"
+essential-subdued = "#6e7196"
+essential-bright-accent = "#a78bfa"
+essential-positive = "#a78bfa"
+decorative-subdued = "#272a47"
+
+# The frame around the panels (black in Spotify).
+[app-frame]
+background-base = "#07070f"
+background-highlight = "#141529"
+background-elevated-base = "#141529"
+text-bright-accent = "#a78bfa"
+essential-bright-accent = "#a78bfa"
+
+# Accent buttons, such as the big play button (green in Spotify).
+[bright-accent]
+background-base = "#a78bfa"
+background-highlight = "#bba5fc"
+background-press = "#8f70f0"
+background-elevated-base = "#bba5fc"
+background-elevated-highlight = "#bba5fc"
+background-elevated-press = "#8f70f0"
+background-tinted-base = "#a78bfa"
+background-tinted-highlight = "#a78bfa"
+background-tinted-press = "#a78bfa"

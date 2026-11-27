@@ -1,0 +1,67 @@
+# Every mod of the gallery goes through the antivirus and the robot at each
+# change, the team's own included: that is what the gallery's "Verified"
+# badge says. The list must also match the files exactly: the SHA-256 of
+# every file, the showcase included.
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  safety:
+    name: gallery safety
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      # The checks are spacetify's own: its code lives in spacetify-mod/spacetify.
+      - uses: actions/checkout@v4
+        with:
+          repository: spacetify-mod/spacetify
+          path: .spacetify-app
+      - uses: dtolnay/rust-toolchain@stable
+      - uses: Swatinem/rust-cache@v2
+        with:
+          workspaces: .spacetify-app
+
+      # spacetify's own tests, run against this gallery: the list matches the
+      # files, and installing from it works.
+      - name: The list matches the files
+        run: |
+          SPACETIFY_GALLERY_DIR="$GITHUB_WORKSPACE" cargo test --manifest-path .spacetify-app/Cargo.toml \
+            -p spacetify-core --locked
+
+      - name: Build spacetify
+        run: cargo build --manifest-path .spacetify-app/Cargo.toml -p spacetify-cli --locked
+
+      - name: Antivirus
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y clamav
+          sudo systemctl stop clamav-freshclam || true
+          sudo freshclam
+          clamscan --recursive --infected gallery/mods
+
+      - name: Robot review of every mod
+        run: |
+          failed=0
+          for dir in gallery/mods/*/; do
+            .spacetify-app/target/debug/spacetify gallery review "$dir" --lang en --json review.json > /dev/null
+            blocking="$(jq -r '.blocking' review.json)"
+            echo "$dir: $blocking blocking"
+            if [ "$blocking" != "0" ]; then
+              .spacetify-app/target/debug/spacetify gallery review "$dir" --lang en
+              failed=1
+            fi
+          done
+          exit "$failed"

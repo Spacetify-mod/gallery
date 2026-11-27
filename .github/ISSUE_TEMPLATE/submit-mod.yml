@@ -1,0 +1,91 @@
+name: Submit a mod / Proposer un mod
+description: Send a theme or an extension to spacetify's gallery. / Envoie un thème ou une extension pour la galerie de spacetify.
+title: "[Mod] "
+labels: ["gallery-submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **The easy way:** in the spacetify app, open **Submit**. It checks your mod, makes the `.zip` and opens this form already filled in. Then drop the `.zip` below and send.
+
+        A robot checks the mod right away (files, antivirus, hidden code, web addresses) and answers here. Then the spacetify team accepts or refuses it. You get a notification either way.
+
+        ---
+
+        **Le plus simple :** dans l'appli spacetify, ouvre **Proposer**. Elle vérifie ton mod, prépare le `.zip` et ouvre ce formulaire déjà rempli. Il ne reste qu'à glisser le `.zip` ci-dessous et envoyer.
+
+        Un robot vérifie le mod tout de suite (fichiers, antivirus, code caché, adresses internet) et répond ici. Ensuite l'équipe spacetify l'accepte ou le refuse. Tu es prévenu dans les deux cas.
+  - type: input
+    id: name
+    attributes:
+      label: Mod name / Nom du mod
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Kind / Type
+      options:
+        - Theme
+        - Extension
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The version written in theme.toml or extension.toml. / La version écrite dans theme.toml ou extension.toml.
+      placeholder: 1.0.0
+    validations:
+      required: true
+  - type: dropdown
+    id: request
+    attributes:
+      label: Request / Demande
+      options:
+        - New mod
+        - Update of a mod already in the gallery
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description (English) / Description (anglais)
+      description: One sentence on what the mod does. / Une phrase sur ce que fait le mod.
+    validations:
+      required: true
+  - type: textarea
+    id: description_fr
+    attributes:
+      label: Description (French) / Description (français)
+      description: Optional. / Facultatif.
+  - type: textarea
+    id: zip
+    attributes:
+      label: The mod (.zip) / Le mod (.zip)
+      description: Drop the .zip made by spacetify here. / Glisse ici le .zip préparé par spacetify.
+  - type: input
+    id: repository
+    attributes:
+      label: Or a GitHub repository / Ou un dépôt GitHub
+      description: Instead of the .zip, a public repository that holds the mod. / Au lieu du .zip, un dépôt public qui contient le mod.
+      placeholder: https://github.com/name/repository
+  - type: input
+    id: reference
+    attributes:
+      label: Tag or commit / Tag ou commit
+      description: With a repository only. / Seulement avec un dépôt.
+      placeholder: v1.0.0
+  - type: input
+    id: folder
+    attributes:
+      label: Folder in the repository / Dossier dans le dépôt
+      description: If the mod is not at the top of the .zip or the repository. / Si le mod n'est pas tout en haut du .zip ou du dépôt.
+      placeholder: themes/aurora
+  - type: checkboxes
+    id: rights
+    attributes:
+      label: Rights / Droits
+      options:
+        - label: This mod is mine, or I may share it, and it hides nothing harmful. / Ce mod est de moi, ou j'ai le droit de le partager, et il ne cache rien de dangereux.
+          required: true

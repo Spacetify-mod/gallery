@@ -1,0 +1,8 @@
+# Example theme for spacetify. See docs/themes.md for every field.
+
+id = "midnight"
+name = "Midnight"
+version = "1.0.0"
+author = "spacetify"
+description = "Deep blue backgrounds with a violet accent."
+spacetify = ">=0.2.0"

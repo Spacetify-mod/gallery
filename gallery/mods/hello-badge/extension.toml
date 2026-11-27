@@ -1,0 +1,24 @@
+# Example extension for spacetify. See docs/extensions.md for every field.
+
+id = "hello-badge"
+name = "Hello badge"
+version = "1.0.0"
+author = "spacetify"
+description = "Shows a small badge above the player bar, to check that extensions work."
+spacetify = ">=0.2.0"
+
+# Every selector the code relies on. `spacetify doctor` checks that they
+# still exist in the installed version of Spotify.
+selectors = ['[data-testid="now-playing-bar"]']
+
+# Settings are stored in Spotify and read with spacetify.settings.get().
+[settings.text]
+type = "string"
+default = "spacetify ✓"
+label = "Badge text"
+
+[settings.side]
+type = "choice"
+choices = ["left", "right"]
+default = "right"
+label = "Side of the window"
