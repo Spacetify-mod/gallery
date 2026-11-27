@@ -1,0 +1,20 @@
+# Skip Explicit, a spacetify extension. See docs/extensions.md for every field.
+
+id = "skip-explicit"
+name = "Skip Explicit"
+version = "1.0.0"
+author = "spacetify"
+description = "Skips songs marked explicit, with a button to turn it on and off and songs or artists you allow."
+spacetify = ">=0.4.0"
+
+selectors = []
+
+[settings.enabled]
+type = "boolean"
+default = true
+label = "Skip explicit songs"
+
+[settings.notify]
+type = "boolean"
+default = true
+label = "Say when a song is skipped"

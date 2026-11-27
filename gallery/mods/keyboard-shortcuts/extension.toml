@@ -1,0 +1,26 @@
+# Keyboard Shortcuts, a spacetify extension. See docs/extensions.md for every field.
+
+id = "keyboard-shortcuts"
+name = "Keyboard Shortcuts"
+version = "1.0.0"
+author = "spacetify"
+description = "Use Spotify without the mouse: move around, control the music and click anything with letters."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = ['[data-testid="top-bar-forward-button"]']
+
+[settings.navigation]
+type = "boolean"
+default = true
+label = "Move around (J, K, G, H, L)"
+
+[settings.playback]
+type = "boolean"
+default = true
+label = "Control the music (N, P, 0 to 9, M, S, R)"
+
+[settings.hints]
+type = "boolean"
+default = true
+label = "T puts a letter on everything you can click"

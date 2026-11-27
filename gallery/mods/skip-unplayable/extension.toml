@@ -1,0 +1,21 @@
+# Skip Unplayable, a spacetify extension. See docs/extensions.md for every field.
+
+id = "skip-unplayable"
+name = "Skip Unplayable"
+version = "1.0.0"
+author = "spacetify"
+description = "When a song or a video cannot play, it goes on to the next one instead of staying stuck."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = ['[data-testid="control-button-playpause"]']
+
+[settings.delay]
+type = "number"
+default = 6
+label = "Seconds to wait before skipping"
+
+[settings.notify]
+type = "boolean"
+default = true
+label = "Say when something is skipped"

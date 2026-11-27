@@ -1,0 +1,15 @@
+# WebNowPlaying, a spacetify extension. See docs/extensions.md for every field.
+
+id = "webnowplaying"
+name = "WebNowPlaying"
+version = "1.0.0"
+author = "spacetify"
+description = "Shows the song playing in Rainmeter skins and other WebNowPlaying apps, and lets them control Spotify."
+spacetify = ">=0.4.0"
+
+selectors = []
+
+[settings.port]
+type = "number"
+default = 8974
+label = "Port of the WebNowPlaying app on this computer"

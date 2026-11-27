@@ -1,0 +1,21 @@
+# A-B Loop, a spacetify extension. See docs/extensions.md for every field.
+
+id = "ab-loop"
+name = "A-B Loop"
+version = "1.0.0"
+author = "spacetify"
+description = "Plays a part of a song over and over: choose where it starts and ends, from a button, a right-click or the keyboard."
+spacetify = ">=0.4.0"
+
+# Every selector the code relies on, checked by `spacetify doctor`.
+selectors = ['[data-testid="playback-progressbar"]']
+
+[settings.shortcuts]
+type = "boolean"
+default = true
+label = "Shortcuts: Shift + A, Shift + B, Shift + X"
+
+[settings.remember]
+type = "boolean"
+default = true
+label = "Remember the loop of each song"

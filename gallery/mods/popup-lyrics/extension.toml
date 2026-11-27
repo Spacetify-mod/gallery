@@ -1,0 +1,27 @@
+# Pop-up Lyrics, a spacetify extension. See docs/extensions.md for every field.
+
+id = "popup-lyrics"
+name = "Pop-up Lyrics"
+version = "1.0.0"
+author = "spacetify"
+description = "Synced lyrics in a small window that stays on top of your other windows. Click a line to go there."
+spacetify = ">=0.4.0"
+
+selectors = []
+
+[settings.size]
+type = "choice"
+choices = ["small", "medium", "large"]
+default = "medium"
+label = "Text size"
+
+[settings.align]
+type = "choice"
+choices = ["center", "left"]
+default = "center"
+label = "Text alignment"
+
+[settings.background]
+type = "boolean"
+default = true
+label = "Blurred cover behind the lyrics"

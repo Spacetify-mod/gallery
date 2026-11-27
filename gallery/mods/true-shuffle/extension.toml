@@ -1,0 +1,16 @@
+# True Shuffle, a spacetify extension. See docs/extensions.md for every field.
+
+id = "true-shuffle"
+name = "True Shuffle"
+version = "1.0.0"
+author = "spacetify"
+description = "A real random order for a playlist, an album or the queue: every song once, none favoured."
+spacetify = ">=0.4.0"
+
+selectors = []
+
+[settings.after]
+type = "choice"
+choices = ["stop", "continue"]
+default = "stop"
+label = "When the shuffled songs are over"
