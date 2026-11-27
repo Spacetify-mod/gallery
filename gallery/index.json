@@ -7190,6 +7190,322 @@
         ]
       },
       "updated": "2026-11-27"
+    },
+    {
+      "id": "skip-unplayable",
+      "kind": "extension",
+      "name": "Skip Unplayable",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "When a song or a video cannot play, it goes on to the next one instead of staying stuck.",
+      "description_fr": "Quand un titre ou une vidéo ne peut pas être lu, passe au suivant au lieu de rester bloqué.",
+      "path": "gallery/mods/skip-unplayable",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "68f2a8757bc8f2857b225c84cc031999b85f6452155e444141fee8c566842273"
+        },
+        {
+          "path": "main.js",
+          "sha256": "2bdfc4c23d8366d25a44cb6f946777291562b05bbebf7d656107ce63fb88211c"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-skipped.webp",
+            "sha256": "a1c8a96c097f98dbf63ead391f5d297fc91dadbd1884dc187a77f8b89e49bad8"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "82645936679585412ee23520c7d43ccd1f1915fe58b30f3ce8ab0dd1e0fd9c8a"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "316f6fd6870ca8883532edddb5d392190e954725723e35c4685dd86f9e056e42"
+        },
+        "tags": [
+          "player",
+          "skip",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
+    },
+    {
+      "id": "skip-explicit",
+      "kind": "extension",
+      "name": "Skip Explicit",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Skips songs marked explicit, with a button to turn it on and off and songs or artists you allow.",
+      "description_fr": "Passe les titres marqués explicites, avec un bouton pour l'activer et des titres ou artistes autorisés.",
+      "path": "gallery/mods/skip-explicit",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "71e1829d73dfd0cb7805846bb88424f2d93622c727ba16ca1dbd61f1e6e5675b"
+        },
+        {
+          "path": "main.js",
+          "sha256": "61ad2535099ee59d3e2efe7e150cfae5a9c9988ae264c89d95da02581e7b6ea6"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-skipped.webp",
+            "sha256": "320eef6a961c1e04f552a7615c0573771d814551465952574505a0b8a455f63c"
+          },
+          {
+            "path": "showcase/2-allow.webp",
+            "sha256": "63f1198bc30aa8761e37096976691839f909395729c2f4f678cdd08b36a3db40"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "2826cab1fdecb41cfbbf44bce99525b56b5ccb4f99d30f2f140b0b17ec885137"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "427c0a6a405814578a868bf034f8ae3c94875450edf70598de6f70a550d738fa"
+        },
+        "tags": [
+          "player",
+          "skip",
+          "explicit",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
+    },
+    {
+      "id": "keyboard-shortcuts",
+      "kind": "extension",
+      "name": "Keyboard Shortcuts",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Use Spotify without the mouse: move around, control the music and click anything with letters.",
+      "description_fr": "Utilise Spotify sans la souris : se déplacer, contrôler la musique et tout cliquer avec des lettres.",
+      "path": "gallery/mods/keyboard-shortcuts",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "f5dfcc94d03fca4aa0a302c722c14e18b13901d9a69d3f8b7de9b8d6b1eb0f8e"
+        },
+        {
+          "path": "main.js",
+          "sha256": "c5b0dee9225202e3c1ee372f6103fedbc61ca6f13674c28c33c23899afa50814"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-letters.webp",
+            "sha256": "8dc03e253abbaa9a51e8dcac825c6ca5c4a48516364b5982bd4d49a3af826506"
+          },
+          {
+            "path": "showcase/2-list.webp",
+            "sha256": "95f402079496858cf705721be24511482d715ddf1e71f867c0d12f027a5e74a8"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "01eaf20adac35ae9ca996b338bccb7d60a969a73f9581adada4702e2ec28dad6"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "cd4efc5fa9529a70f40b228ad953751da042e4333239e7b91e9e3e7612a825f2"
+        },
+        "tags": [
+          "keyboard",
+          "shortcuts",
+          "navigation",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
+    },
+    {
+      "id": "ab-loop",
+      "kind": "extension",
+      "name": "A-B Loop",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Plays a part of a song over and over: choose where it starts and ends, from a button, a right-click or the keyboard.",
+      "description_fr": "Rejoue un passage d'un titre en boucle : choisis son début et sa fin avec un bouton, un clic droit ou le clavier.",
+      "path": "gallery/mods/ab-loop",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "008acd9ff24f116cc72c949d7acad2982e9b0d25c39a5940120327d332185200"
+        },
+        {
+          "path": "main.js",
+          "sha256": "95d00a5067bb97966f62ff36ff83c9dca227ba1b957449666a8854d816d525cf"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-loop.webp",
+            "sha256": "b7a0aea0f2ad4acd8f3cc5c3245646d1d90a6d68469b6371c886b9f3670ebd1f"
+          },
+          {
+            "path": "showcase/2-right-click.webp",
+            "sha256": "5779fdb63b8511277c0d4c5dad087a033c8f1b01fcad06144dccdf3fc0758982"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "66fa3095174ee3fe38ed657b2f13f90d8c4675c22409162c705986d678784534"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "9b7c8a5d18abd1acf5b27893f3d70f2e680782900eebd774455375e020af7e9b"
+        },
+        "tags": [
+          "player",
+          "loop",
+          "practice",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
+    },
+    {
+      "id": "popup-lyrics",
+      "kind": "extension",
+      "name": "Pop-up Lyrics",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Synced lyrics in a small window that stays on top of your other windows. Click a line to go there.",
+      "description_fr": "Les paroles synchronisées dans une petite fenêtre qui reste au-dessus des autres. Clique sur une ligne pour y aller.",
+      "path": "gallery/mods/popup-lyrics",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "e4c744181f46139f9fd96a2f064f10ce8cec206d393cd049e8a29e24a9672e92"
+        },
+        {
+          "path": "main.js",
+          "sha256": "3379c8efc949ab87878b7009113965a0bcaacb5030395b73aae96bce85ebec1f"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-window.webp",
+            "sha256": "7faea6a98d0b4405410bef3e58a5d80d41c4c144c4ebbaa822b34777ca548857"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "d85ed4660b545fa931c25c296fe00fdb81c37d752383935ee2e870a79edc8255"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "504f2b9b97fe19674da30a932ab679e9a0a6831936c310f21f35d4cc221ed648"
+        },
+        "tags": [
+          "lyrics",
+          "window",
+          "karaoke",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
+    },
+    {
+      "id": "true-shuffle",
+      "kind": "extension",
+      "name": "True Shuffle",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "A real random order for a playlist, an album or the queue: every song once, none favoured.",
+      "description_fr": "Un vrai ordre aléatoire pour une playlist, un album ou la file : chaque titre une fois, aucun favori.",
+      "path": "gallery/mods/true-shuffle",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "58f9b9612508920db9ca95065ab73de01804adcbf4d33b05b042d351f35a1005"
+        },
+        {
+          "path": "main.js",
+          "sha256": "077852f9b1fddb685bbea44f069bec3d5f0648b094d66dcc4c74ae6a0bb0120d"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-menu.webp",
+            "sha256": "bf7cc3a9e0762ebea8ac9274110692a42c8ab24596c84187757628efbb2124d2"
+          },
+          {
+            "path": "showcase/2-shuffled.webp",
+            "sha256": "5e8bf9fac3c16e72e134ac5481eb24f669ae2d433a95a79e8176ac995a588a26"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "800f89faa4874f8a10e28087201413d026a7f76c0ac70feb9c21d1a78939f730"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "d9bac6e9bce1597a9a0d55ac50779999c3b54fc6a532c57b9053a83cf5375ed5"
+        },
+        "tags": [
+          "player",
+          "shuffle",
+          "playlists",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
+    },
+    {
+      "id": "webnowplaying",
+      "kind": "extension",
+      "name": "WebNowPlaying",
+      "author": "spacetify",
+      "version": "1.0.0",
+      "description": "Shows the song playing in Rainmeter skins and other WebNowPlaying apps, and lets them control Spotify.",
+      "description_fr": "Affiche le titre en cours dans les skins Rainmeter et les autres applis WebNowPlaying, et les laisse contrôler Spotify.",
+      "path": "gallery/mods/webnowplaying",
+      "files": [
+        {
+          "path": "extension.toml",
+          "sha256": "20b42088c3e683806a75170bc4d41ab3fddc4835ae0c240b8751028bf87813a6"
+        },
+        {
+          "path": "main.js",
+          "sha256": "43343c6e3d41bfe2b9aa38237960607ddd35d21991c03c4558dcc64bea810b6f"
+        }
+      ],
+      "showcase": {
+        "images": [
+          {
+            "path": "showcase/1-widget.webp",
+            "sha256": "81e673c31e24e5087cff495aaa0b5bbf5b1861285ed7a01905632c5ad5ce7d24"
+          }
+        ],
+        "about": {
+          "path": "showcase/about.md",
+          "sha256": "bab9f430e0a9d4b32ba2306b1ed1c3aaabad492b0519015d6c18a0bf979f6216"
+        },
+        "about_fr": {
+          "path": "showcase/about.fr.md",
+          "sha256": "275f6a4259d94a1488bec620a513ef1802eb1b0d26f2bf44dd3f12513206dbc3"
+        },
+        "tags": [
+          "rainmeter",
+          "desktop",
+          "widgets",
+          "spicetify"
+        ]
+      },
+      "updated": "2026-11-27"
     }
   ]
 }
